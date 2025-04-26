@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" , initial-scale=1. <title>Find Prime Numbers </title>
+</head>
+
+<body>
+    <h1>Challenge</h1>
+    <script>
+        /* Asal sayıyı doğrulama */
+        function isAsal(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+        /* a) En yakın asal sayıyı bulma */
+        function nearestAsal(num) {
+            if (isAsal(num)) return num;
+
+            let down = num - 1
+            let up = num + 1
+
+            while (true) {
+                if (isAsal(down)) return down;
+                if (isAsal(up)) return up;
+                down--;
+                up++;
+            }
+        }
+        /* b) En yakın asal sayıların toplamı */
+        function additionAsal(num) {
+            if (isAsal(num)) {
+                return console.log('Girilen değer zaten asal sayıdır.', num * 2)
+            } else if (num < 2) {
+                return console.log('Bu işlem yapılamaz! Lütfen geçerli bir sayı giriniz.')
+            };
+
+            let down = num - 1
+            let up = num + 1
+
+            while (!isAsal(down)) {
+                down--;
+            }
+
+            while (!isAsal(up)) {
+                up++;
+            }
+            return console.log(`${down} + ${up}`, down + up);
+        }
+        additionAsal(100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" , initial-scale=1. <title> Objects </title>
+</head>
+
+<body>
+    <h1> Challenge </h1>
+    <script>
+        /* Challenge 1 */
+
+        const person = {
+            name: 'John',
+            age: 30,
+            country: 'USA'
+        };
+        console.log(person.name + ' ' + person.age) // John 30
+
+        /* Challenge 2 */
+
+        person.city = 'New York';
+        console.log(person) // {name: "John", age: 30, country: "USA", city: "New York"}
+
+        /* Challenge 3 */
+
+        person.age = 23;
+        console.log(person); // {name: "John", age: 23, country: "USA", city: "New York"}
+
+        /* Challenge 4 */
+
+        delete person.country;
+        console.log(person); // {name: "John", age: 23, city: "New York"}
+
+        /* Challenge 5 */
+
+        person.country = 'USA';
+        person.age = 30;
+        delete person.city;
+
+        const { name, country } = person;
+        console.log(name); // John
+        console.log(country); // USA
+
+        /* Challenge 6 */
+
+        const keys = Object.keys(person);
+        const values = Object.values(person);
+        console.log(keys); // ["name", "age", "country"]
+        console.log(values); // ["John", 30, "USA"] 
+
+        /* Challenge 7 */
+
+        delete person.country;
+
+        const address = {
+            city: 'New York',
+            country: 'USA'
+        };
+        const personAddress = { ...person, ...address };
+        console.log(personAddress); // {name: "John", age: 30, city: "New York", country: "USA"}
+
+        /* Challenge 8 */
+
+        const user = {
+            name: 'John',
+            address: {
+                city: 'New York',
+                country: 'USA'
+            }
+        };
+        const { address: { city } } = user;
+        console.log(city); // New York
+
+        /* Challenge 9 */
+
+        person.country = 'USA';
+
+        for (const key in person) {
+            console.log(key, person[key]);
+        }                                  // name-"John" // age-30 // country-"USA"
+
+        /* Challenge 10 */
+
+        if (person.city) {
+            console.log(person.city);
+        }
+        else console.log('City not found'); // City not found
+
+    </script>
+</body>
+
+</html>

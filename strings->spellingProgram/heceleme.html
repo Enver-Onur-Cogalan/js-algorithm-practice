@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width-device-width" , initial-scale=1. <title> Heceleme Programı</title>
+</head>
+
+<body>
+    <h1> Challenge </h1>
+    <script>
+        const vowels = ['a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü'];
+
+        function syllableSeparation(word) {
+            word = word.toLowerCase();
+            let syllables = [];
+            let syllable = '';
+
+            for (let i = 0; i < word.length; i++) {
+                syllable += word[i]; // Add letter
+
+                // If the letter is a vowel, check the next letter
+                if (vowels.includes(word[i])) {
+                    // If the next letter is present and it is a consonant
+                    if (i + 1 < word.length && !vowels.includes(word[i + 1])) {
+                        // If the next two letters are silent, shift the divider by one
+                        if (i + 2 < word.length && !vowels.includes(word[i + 2])) {
+                            syllable += word[i + 1]; // Add consonant
+                            i++; // Skip a letter
+                        }
+                        syllables.push(syllable);
+                        syllable = ''; // Start a new syllable
+                    } else {
+                        syllables.push(syllable);
+                        syllable = ''; // Start a new syllable
+                    }
+                }
+            }
+            // If there is a last syllable, add it
+            if (syllable) {
+                syllables[syllables.length - 1] += syllable;
+            }
+
+            return syllables;
+        }
+
+        console.log(syllableSeparation('Patika')); // ["pa", "ti", "ka"] (3)
+        console.log(syllableSeparation('bilgisayar')); // ["bil", "gi", "sa", "yar"] (4)
+        console.log(syllableSeparation('Onur')); // ["o", "nur"] (2)
+        console.log(syllableSeparation('yazılım')); // ["ya", "zı", "lım"] (3)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width-device-width" , initial-scale=1. <title>JavaScript Function</title>
+</head>
+
+<body>
+    <h1>Challenge Function</h1>
+    <script>
+        // Function Declaration
+        function sayHello(name) {
+            return `Merhaba, ${name}!`
+        }
+        console.group('Function Declaration');
+        console.log(sayHello('Alice'));
+        console.groupEnd('Function Declaration');
+
+        // Function Expression
+        const multiply = function (a, b) {
+            return a * b
+        }
+        console.group('Function Expression');
+        console.log(multiply(5, 3));
+        console.groupEnd('Function Expression');
+
+        // Arrow Function
+        const divide = (a, b) => a / b;
+        console.group('Arrow Function');
+        console.log(divide(10, 2));
+        console.groupEnd('Arrow Function');
+
+        // Varsayılan Parametreler
+        function greetUser(name = 'Misafir', surname = '') {
+            return `Hoş geldin, ${name + surname}`
+        };
+        console.group('Varsayılan Parametreler');
+        console.log(greetUser());
+        console.log(greetUser('John Doe'));
+        console.groupEnd('Varsayılan Parametreler');
+
+    </script>
+</body>
+
+</html>

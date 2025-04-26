@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainig</title>
+</head>
+
+<body>
+    <script>
+        /* 1. map() Challenge */
+        const number = [1, 2, 3];
+        const mappedNumber = number.map((item) => item * 2);
+        console.log(mappedNumber); // [2, 4, 6] (3)
+
+        /* 2. forEach() Challenge */
+        const fruits = ['🍎', '🍌', '🍓'];
+        fruits.forEach((item) => console.log(`This is ${item}`)); // This is 🍎 // This is 🍌 // This is 🍓
+
+        /* 3. filter() Challenge */
+        const numbers = [5, 12, 8, 21];
+        const filterNumbers = numbers.filter((item) => item > 10);
+        console.log(filterNumbers); // [12, 21] (2)
+
+        /* 5. includes() Challenge */
+        const fruits_1 = ['🍎', '🍌', '🍓'];
+        console.log(fruits_1.includes('🍎')); // true
+
+        /* 6. slice() Challenge */
+        const number_1 = [1, 2, 3, 4, 5];
+        const sliceNumber_1 = number_1.slice(0, 2);
+        console.log(sliceNumber_1); // [1, 2] (2)
+
+        /* 7. push() Challenge */
+        const fruits_2 = ['🍎', '🍌'];
+        fruits_2.push('🍉');
+        console.log(fruits_2); // ["🍎", "🍌", "🍉"] (3)
+
+        /* 8. pop() Challenge */
+        fruits_2.pop();
+        console.log(fruits_2); // ["🍎", "🍌"] (2)
+    </script>
+</body>

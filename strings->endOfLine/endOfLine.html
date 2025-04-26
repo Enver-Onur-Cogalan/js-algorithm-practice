@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width-device-width" , initial-scale=1. <title> End of Line</title>
+</head>
+
+<body>
+    <h1>Challenge</h1>
+    <script>
+        const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed fermentum enim, eget egestas enim. Donec fringilla bibendum placerat. Vivamus in turpis et sapien pulvinar dictum ut vel nisl. Duis in ante tempor elit dapibus consectetur vel id arcu. Donec elementum euismod purus, a gravida lectus lacinia sed. Curabitur molestie, felis ornare luctus viverra, dui lacus ultricies orci, id dignissim sapien odio pretium nisi. Etiam accumsan elementum ligula, eget finibus urna pharetra et. Praesent sit amet ligula vel erat sodales suscipit vitae vitae metus. Aenean accumsan sapien a ipsum elementum, non lobortis est tincidunt. Etiam auctor tellus et pharetra auctor. Vivamus elit diam, sollicitudin quis nunc quis, porta dapibus augue. Pellentesque in placerat tellus. Etiam rhoncus odio tincidunt auctor tincidunt. Nulla facilisi."
+
+        function TextParser(text, wordCount = 5) {
+            let words = text.trim().split(' '); // Separate words with spaces
+            let result = '';
+
+            if (wordCount !== 5) {
+                console.warn('Does not comply with the rule of the Challenge')
+            }
+
+            for (let i = 0; i < words.length; i++) {
+                result += words[i] + ' '; // Add the word and put a space at the end
+
+                // Start a new line every 5 words
+                if ((i + 1) % wordCount === 0) {
+                    result += '\n------------------\n'; //  proper line ending
+                }
+            }
+            return result.trim();  // Remove extra spaces
+        }
+
+        console.log(TextParser(text));
+        console.log(TextParser(text, 3));
+    </script>
+</body>
+
+</html>

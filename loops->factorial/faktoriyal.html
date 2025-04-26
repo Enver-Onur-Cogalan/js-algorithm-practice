@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UFT-8">
+<meta name="viewport" , initial-scale=1. <title>Challenge</title>
+</head>
+
+<body>
+    <h1>Faktoriyal</h1>
+    <script>
+        /* Recursive Way*/
+        const faktoriyal = function (n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else if (n < 0) {
+                return 'Lütfen geçerli bir sayı giriniz.'
+            }
+            return n * faktoriyal(n - 1);
+        }
+        console.group('Recursice Way');
+        console.log(faktoriyal(6));
+        console.groupEnd();
+
+        /* Iterative Way */
+        function faktoriyalIterative(n) {
+            if (n < 0) {
+                return 'Lütfen geçerli bir sayı giriniz.'
+            }
+            let num = 1;
+            for (let i = 2; i <= n; i++) {
+                num *= i;
+            }
+            return num
+        }
+        console.group('Iterative Way');
+        console.log(faktoriyalIterative(5))
+        console.groupEnd();
+    </script>
+</body>
+
+</html>
